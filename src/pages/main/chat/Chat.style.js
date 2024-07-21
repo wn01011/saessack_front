@@ -55,6 +55,7 @@ export const ChatContainer = styled.div`
         }
         button {
             flex: 1;
+            cursor: pointer;
             border: 2px solid #114da7;
             border-radius: 8px;
             padding: 10px 30px;

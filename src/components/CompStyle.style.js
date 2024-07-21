@@ -8,6 +8,7 @@ export const HeaderContainer = styled.div`
     padding: 27px 0;
     .logo {
         flex: 2;
+        cursor: pointer;
     }
     .icons {
         flex: 1;

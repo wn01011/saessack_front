@@ -1,6 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 import * as S from './Chat.style';
 
-const Chat = () => {
+const Chat = ({ setUseOpen, setPolicyOpen }) => {
+    const navigate = useNavigate();
+
     return (
         <S.ChatContainer>
             <h3>
@@ -19,18 +22,43 @@ const Chat = () => {
 
             <div className="buttons">
                 <div className="row">
-                    <button>우울증 자가진단</button>
+                    <button
+                        onClick={() => {
+                            navigate('/depressive');
+                        }}
+                    >
+                        우울증 자가진단
+                    </button>
                     <button>따뜻한 위로</button>
                 </div>
                 <div className="row">
-                    <button className="revert">대화 시작하기</button>
+                    <button
+                        className="revert"
+                        onClick={() => {
+                            navigate('/chat');
+                        }}
+                    >
+                        대화 시작하기
+                    </button>
                     <span className="arrow">{'>'}</span>
                 </div>
             </div>
 
             <div className="right">
-                <p>이용약관</p>
-                <p>개인정보 처리방침</p>
+                <p
+                    onClick={() => {
+                        setUseOpen(true);
+                    }}
+                >
+                    이용약관
+                </p>
+                <p
+                    onClick={() => {
+                        setPolicyOpen(true);
+                    }}
+                >
+                    개인정보 처리방침
+                </p>
             </div>
         </S.ChatContainer>
     );
